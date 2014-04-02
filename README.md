@@ -1,7 +1,7 @@
 Achilles
 =========
-A Responsive WordPress theme for apartments
-=======
+A Responsive WordPress theme created for Picerne Apartment websites
+
 # Foundation libsass template
 
 This is a template to start your own project that uses Grunt and libsass!
