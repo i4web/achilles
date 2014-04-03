@@ -4,7 +4,7 @@
  */
  
 require_once locate_template ('lib/theme-wrapper.php');
-
+require_once locate_template ('lib/theme-activation.php');
 
 
 ?>
