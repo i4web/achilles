@@ -1,6 +1,6 @@
 <?php 
 /** 
- * Achilles Theme Activation and Setup
+ * Achilles Theme Setup and Activation
  */
 
 
@@ -9,6 +9,27 @@ if (is_admin() && isset($_GET['activated']) && 'themes.php' == $GLOBALS['pagenow
   wp_redirect(admin_url('themes.php?page=theme_activation_options'));
   exit;
 }
+
+/**
+ * Register the Primary Menu
+ */
+function achilles_setup(){
+
+  // Make theme available for translation.
+  load_theme_textdomain('achilles', get_template_directory() . '/lang');
+  
+  //Setup a theme menu
+  register_nav_menus( array(
+    'Main Navigation'		=>	__('Main Navigation', 'achilles'),
+	'Footer Navigation'	=>  __('Footer Navigation', 'achilles'),
+  ));
+  
+  //Enable Post Thumbnails
+  add_theme_support('post-thumbnails');
+  
+}
+add_action('after_setup_theme', 'achilles_setup');
+
 
 /**
  * Registers the activation options
