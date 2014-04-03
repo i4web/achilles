@@ -249,9 +249,9 @@ add_action('admin_init','achilles_theme_activation_action');
 /**
  * Delete Theme options upon deactivation
  */
-function roots_deactivation() {
-  delete_option('roots_theme_activation_options');
+function achilles_deactivation() {
+  delete_option('achilles_theme_activation_options');
 }
-add_action('switch_theme', 'roots_deactivation');
+add_action('switch_theme', 'achilles_deactivation');
 
 ?>
