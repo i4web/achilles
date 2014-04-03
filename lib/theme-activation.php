@@ -249,7 +249,13 @@ function achilles_theme_activation_action() {
     $menu_items= wp_get_nav_menu_items($primary_nav_term_id);
 
     if (!$menu_items || empty($menu_items)) {
-      $pages = get_pages();
+		
+	   //This sorts the pages in the order that they're created so we can add them to the menu in a default order. 
+	   $pagesArgs = array(
+	   		'sort_column' => 'post_date'
+	   );	
+	   
+      $pages = get_pages($pagesArgs);
       foreach($pages as $page) {
         $item = array(
           'menu-item-object-id' => $page->ID,
