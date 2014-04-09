@@ -60,8 +60,8 @@ function achilles_theme_activation_options_add_page() {
 
   if (!$achilles_activation_options) {
     $theme_page = add_theme_page(
-      __('Theme Activation', 'achilles'),
-      __('Theme Activation', 'achilles'),
+      __('Achilles Activation', 'achilles'),
+      __('Achilles Activation', 'achilles'),
       'edit_theme_options',
       'theme_activation_options',
       'achilles_theme_activation_options_render_page'
