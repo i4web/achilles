@@ -13,13 +13,13 @@ class Achilles_Customize {
 		
     //add a section to customize the logo on the website
     $wp_customize->add_section('achilles_logo', array(
-        'title'    => __('Logo', 'themename'),
+        'title'    => __('Logo', 'achilles'),
         'priority' => 01,
     ));
  
-     //  =============================
-    //  = Image Upload              =
-    //  =============================
+	/**
+	 * Image Upload
+	 */  
     $wp_customize->add_setting('achilles_theme_options[achilles_upload_logo]', array(
         'default'           => 'image.jpg',  
         'capability'        => 'edit_theme_options',
@@ -32,6 +32,34 @@ class Achilles_Customize {
         'section'  => 'achilles_logo',
         'settings' => 'achilles_theme_options[achilles_upload_logo]',
     )));
+	
+	
+    //add a section to customize the body css on the website
+    $wp_customize->add_section('achilles_body_styles', array(
+        'title'    => __('Body Styling', 'achilles'),
+        'priority' => 02,
+    ));
+	
+    //  =============================
+    //  Background Color Picker              =
+    //  =============================
+    $wp_customize->add_setting('achilles_theme_options[body_color]', array(
+        'default'           => 'FFF',
+       // 'sanitize_callback' => 'sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'           => 'option',
+ 
+    ));
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'body_color', array(
+        'label'    => __('Body Color', 'achilles'),
+        'section'  => 'achilles_body_styles',
+        'settings' => 'achilles_theme_options[body_color]',
+    )));	
+ 	
+	
+	
+	
 	}
 	
 
