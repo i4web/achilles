@@ -9,7 +9,7 @@ function achilles_template_path() {
   return Achilles_Wrapping::$main_template;
 }
 
-function roots_sidebar_path() {
+function achilles_sidebar_path() {
   return new Achilles_Wrapping('templates/sidebar.php');
 }
 
