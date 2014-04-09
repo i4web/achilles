@@ -30,7 +30,8 @@ function achilles_settings_init() {
     register_setting( 'achilles-settings-group', 'achilles-settings' );
     add_settings_section( 'achilles-general-settings', 'General Settings', 'achilles_general_settings_callback', 'achilles' );
     add_settings_field('resident-portal', 'Resident Portal URL', 'resident_portal_url_callback', 'achilles', 'achilles-general-settings');
-    add_settings_field( 'facebook-url', 'Facebook URL', 'facebook_url_callback', 'achilles', 'achilles-general-settings' );
+    add_settings_field('facebook-url', 'Facebook URL', 'facebook_url_callback', 'achilles', 'achilles-general-settings' );
+    add_settings_field('google-analytics-id', 'Google Analytics ID', 'google_analytics_id_callback', 'achilles', 'achilles-general-settings');
 	
 }
 add_action( 'admin_init', 'achilles_settings_init' );
@@ -50,13 +51,23 @@ function resident_portal_url_callback(){
   $resPortalURL = esc_attr( $settings['resident-portal'] );
   echo "<input type='text' name='achilles-settings[resident-portal]' value='$resPortalURL' />";
 }
+
 /** 
  * Render the Facebook URL input
  */
 function facebook_url_callback() {
 	$settings = (array) get_option( 'achilles-settings' );
-	$facebookURL = esc_attr( $settings['facebook'] );    
-	echo "<input type='text' name='achilles-settings[facebook]' value='$facebookURL' />";
+	$facebookURL = esc_attr( $settings['facebook-url'] );    
+	echo "<input type='text' name='achilles-settings[facebook-url]' value='$facebookURL' />";
+}
+
+/** 
+ * Render the Google Analytics ID input
+ */
+function google_analytics_id_callback() {
+	$settings = (array) get_option( 'achilles-settings' );
+	$ganalticsID = esc_attr( $settings['google-analytics-id'] );    
+	echo "<input type='text' name='achilles-settings[google-analytics-id]' value='$ganalticsID' />";
 }
 
 
