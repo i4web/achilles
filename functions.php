@@ -3,7 +3,8 @@
  * Include Achilles lib files
  */
   
-require_once locate_template ('lib/achilles-settings.php'); 
+require_once locate_template ('lib/achilles-settings.php');
+require_once locate_template ('lib/achilles-scripts.php');			// Load Theme Scripts and Stylesheets 
 require_once locate_template ('lib/theme-wrapper.php');
 require_once locate_template ('lib/theme-activation.php');
 require_once locate_template ('lib/achilles-sidebar.php');			// Sidebar Class
