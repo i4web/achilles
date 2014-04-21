@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       grunt: { files: ['Gruntfile.js'] },
 
       sass: {
-        files: 'scss/**/*.scss',
+        files: 'bower_components/foundation/scss/**/*.scss',
         tasks: ['sass']
       }
     }
