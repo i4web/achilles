@@ -9,6 +9,12 @@
   <h4>Heading 4</h4>
   <h5>Heading 5</h5>
   <h6>Heading 6</h6>
+  
+<div data-alert class="alert-box">
+  <!-- Your content goes here -->
+  <a href="#" class="close">&times;</a>
+</div>  
+  
 <?php if (is_front_page()){
 	  //@todo add Slider/Image
       }
