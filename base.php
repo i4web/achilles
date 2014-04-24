@@ -2,6 +2,16 @@
 
 <body <?php body_class(); ?>>
 
+<?php $achillesLogo = get_option('achilles_theme_options'); 
+
+
+
+?>
+
+
+
+<img src="<?php echo $achillesLogo['achilles_upload_logo'];?>" alt="Property Name here">
+
 <div class="main-wrapper" role="document">
   <h1>Heading 1</h1>
   <h2>Heading 2</h2>

@@ -18,6 +18,10 @@ function achilles_scripts() {
 	
 	
 	wp_enqueue_style( 'achilles_main' );
+	
+	//Load built in jQuery from WordPress 
+	// @TODO: Load jQuery from CDN or Google
+	wp_enqueue_script( 'jquery' );
 }
 
 add_action('wp_enqueue_scripts', 'achilles_scripts', 100);
